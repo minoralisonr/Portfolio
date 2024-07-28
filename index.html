@@ -4,27 +4,52 @@
     html5up.net | @ajlkn
     Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
+
 <html>
     <head>
-        <title>Portfolio</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-    </head>
-    <body class="is-preload">
-
+        <title>My Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="path/to/proxima-nova.css">
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+        #header h1 {
+            font-family: 'Inconsolata', monospace; /* Change font family for the header */
+            font-size: 5.5em; /* Increase font size */
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+            }
+            40% {
+            transform: translateY(-30px);
+            }
+            60% {
+            transform: translateY(-15px);
+            }
+        }
+        .logo img {
+            width: 60px; /* Resize logo */
+            height: auto; /* Maintain aspect ratio */
+            animation: bounce 1.5s ease; /* Apply bounce animation */
+        }
+        
+    </style>
+</head>
+<body class="is-preload">
         <!-- Wrapper -->
         <div id="wrapper">
 
             <!-- Header -->
             <header id="header" class="alt">
-                <span class="logo"><img src="images/logo.svg" alt="" /></span>
+                <span class="logo"><img src="images/code-2.svg" alt="" /></span>
                 <h1>Hiarimino Ralison Rakotoson</h1>
-                Tongasoa, Bienvenue, Welcome!<br> 
-				I'm Mino, a Computer Science student at <a href="https://cmich.edu">Central Michigan University</a>. 
-				I'm passionate about software engineering and business automation, and excited to innovate and start my career in tech! <a href="https://github.com/fellowshiproject/Project1">GitHub</a>.</p>
+                Tongasoa, Bienvenue, Welcome to my portfolio!<br>
+ 
+				</p>
             </header>
 
             <!-- Nav -->
@@ -33,7 +58,7 @@
                     <li><a href="#intro" class="active">Introduction</a></li>
                     <li><a href="#first">Projects</a></li>
                     <li><a href="#second">Skills</a></li>
-                    <li><a href="#cta">Get Started</a></li>
+                    <li><a href="#cta">Get in Touch</a></li>
                 </ul>
             </nav>
 
@@ -45,92 +70,221 @@
                     <div class="spotlight">
                         <div class="content">
                             <header class="major">
-                                <h2>About Me</h2>
+                                <h2>About Me 👩🏾‍💻</h2>
                             </header>
-                            <p>I'm currently studying Computer Science at CMU focusing on software development with a minor in information systems. 
-								I've been actively involved in coding projects, tech community <a href="https://www.instagram.com/wit.cmich/">(Women in Technology)</a>, and competitions on campus. My goal is to build impactful and practical software solutions and to grow as a software engineer.</p>
+                            <p>Hello, I'm Mino— a Malagasy Computer Science student with a strong interest in software engineering and business automation. My motto is, "You can do all things that you set your mind to.<picture>
+                                <source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/1f525/512.webp" type="image/webp">
+                                <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f525/512.gif" alt="🔥" width="20" height="20">
+                              </picture>" I enjoy discovering about the latest technologies, especially AI tools, to tackle complex challenges and enhance processes. Committed to staying updated with emerging technologies, I focus on continuous learning and expanding my professional network to make valuable contributions to the tech industry.
+                                 My studies at <a href="https://cmich.edu">Central Michigan University</a> focus on Software Development and minor in Information Systems.
+								I actively engage in coding projects, community such as <a href="https://www.instagram.com/wit.cmich/">(Women in Technology)</a>, and tech competitions on campus. My goal is to build impactful and practical software solutions and advance as a skilled software engineer.<picture>
+                                    <source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/1f199/512.webp" type="image/webp">
+                                    <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f199/512.gif" alt="🆙" width="20" height="20">
+                                  </picture></p>
                             <ul class="actions">
-                                <li><a href="generic.html" class="button">Learn More</a></li>
+                                <li><a href="Resume_Mino.pdf" class="button" download="Resume_Mino.pdf">Resume</a></li>
                             </ul>
                         </div>
-                        <span class="image"><img src="images/IMG_5758.jpg" alt="" /></span>
+                        <span class="image"><img src="images/Untitled design.png" alt="" /></span>
+                        <style>
+                        @keyframes pulseGlow {
+                            0% {
+                                transform: scale(1);
+                                box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+                            }
+                            50% {
+                                transform: scale(1.1);
+                                box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+                            }
+                            100% {
+                                transform: scale(1);
+                                box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+                            }
+                        }
+                        .image img {
+                            width: 50px; /* Resize logo */
+                            height: auto; /* Maintain aspect ratio */
+                            animation: pulseGlow 1s ease-out 1; /* Apply pulse and glow animation */
+                        }
+                        </style>
+
                     </div>
                 </section>
+
 <!-- Projects -->
-            <section id="first" class="main special">
-                <header class="major">
-                    <h2>Projects</h2>
-                </header>
-                <ul class="features">
-                    <li>
-                        <span class="icon solid major style1 fa-code"></span>
+       
+        <section id="first" class="main special">
+            <header class="major">
+                <h2>Projects <picture>
+                    <source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/1f331/512.webp" type="image/webp">
+                    <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f331/512.gif" alt="🌱" width="25" height="25">
+                  </picture></h2>
+            </header>
+            <div id="projects-container">
+                <div class="project-nav left">
+                    <button id="prevBtn" class="nav-btn"><i class="fa fa-chevron-left"></i></button>
+                </div>
+                <div id="projects-wrapper">
+                    <div class="project" id="project1">
+                        <span class="icon solid major style1 fa-laptop-code"></span>
                         <h3>Project 1</h3>
-                        <p>Brief description of the first project. Include details about technologies used and the impact of the project.</p>
-                    </li>
-                    <li>
-                        <span class="icon solid major style3 fa-microchip"></span> <!-- Updated icon -->
+                        <p>Assembler Implementation.</p> 
+                            <p>Programming language: Java.</p>
+                    </div>
+                    <div class="project" id="project2">
+                        <span class="icon solid major style3 far fa-network-wired"></span>
                         <h3>Project 2</h3>
-                        <p>Brief description of the second project. Highlight key features and technologies involved.</p>
-                    </li>
-                    <li>
-                        <span class="icon solid major style5 fa-laptop-code"></span> <!-- Updated icon -->
+                        <p>Weather Station with Real-time Clock.</p>
+                            <p>Programming language: C/C++.</p>
+                    </div>
+                    <div class="project" id="project3">
+                        <span class="icon solid major style5 fa-database"></span>
                         <h3>Project 3</h3>
-                        <p>Brief description of the third project. Emphasize any unique aspects or achievements related to the project.</p>
-                    </li>
+                        <p>Task Management Tool.</p>
+                        <P>Programming language: Java.</p>
+
+                    </div>
+                </div>
+                <div class="project-nav right">
+                    <button id="nextBtn" class="nav-btn"><i class="fa fa-chevron-right"></i></button>
+                </div>
+            </div>
+            <footer class="major">
+                <ul class="actions special">
+                    <li><a href="generic.html" class="button">Learn More</a></li>
                 </ul>
-                <footer class="major">
-                    <ul class="actions special">
-                        <li><a href="generic.html" class="button">Learn More</a></li>
-                    </ul>
-                </footer>
-            </section>
+            </footer>
+        </section>
+        <style>
+           #projects-container {
+                position: relative;
+                display: flex; /* Flex container for positioning arrows */
+                align-items: center; /* Center items vertically */
+            }
+
+            #projects-wrapper {
+                flex: 1; /* Allow wrapper to take remaining space */
+                display: flex;
+                overflow: hidden;
+                position: relative;
+            }
+
+            .project {
+                flex: 1; /* Ensure each project takes up space equally */
+                display: none; /* Hide all projects by default */
+                transition: opacity 1s ease-in-out; /* Smooth transition */
+            }
+            #projects-wrapper .project {
+                line-height: 1.2; /* Adjust line-height to reduce vertical spacing between lines of text */
+                margin: 0; /* Remove any default margin */
+                padding: 10px; /* Adjust padding to reduce space around content */
+            }
+
+            /* Adjust spacing for specific elements within the project */
+            #projects-wrapper .project h2 {
+                margin-bottom: 10px; /* Reduce space below project titles */
+            }
+
+            #projects-wrapper .project p {
+                margin-bottom: 5px; /* Reduce space below paragraphs */
+            }
+
+            /* Adjust the space around images */
+            #projects-wrapper .project img {
+                margin-bottom: 10px; /* Reduce space below images */
+            }
+            .project.active {
+                display: block; /* Show the active project */
+                opacity: 1;
+            }
+
+            .project-nav {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 1; /* Ensure buttons are above projects */
+            }
+
+            .project-nav.left {
+                left: 10px; /* Adjust as needed */
+            }
+
+            .project-nav.right {
+                right: 10px; /* Adjust as needed */
+            }
+
+            .nav-btn {
+                background: none; /* Transparent background */
+                border: none; /* Remove border */
+                font-size: 24px; /* Icon size */
+                color: #007bff; /* Icon color */
+                cursor: pointer; /* Pointer cursor on hover */
+                padding: 0; /* Remove padding */
+                margin: 0; /* Remove margin */
+                transition: color 0.3s ease; /* Smooth color transition */
+            }
+
+            .nav-btn:hover {
+                color: #0056b3; /* Darker color on hover */
+            }
+
+            .nav-btn:focus {
+                outline: none; /* Remove focus outline */
+            }
+        </style>
 
             <!-- Skills -->
             <section id="second" class="main special">
                 <header class="major">
-                    <h2>Skills</h2>
-                    <p>Here is a list of my key skills and expertise in software development.</p>
+                    <h2>Skills <picture>
+                        <source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/1f916/512.webp" type="image/webp">
+                        <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f916/512.gif" alt="🤖" width="25" height="25">
+                      </picture></h2>
+                    <p>Here is a list of my key skills and programming languages in software development.</p>
                 </header>
                 <ul class="statistics">
                     <li class="style1">
-                        <span class="icon solid fa-code"></span>
+                        <span class=" icon solid far fa-mug-hot"></span>
                         <strong>Java</strong>
                     </li>
                     <li class="style2">
-                        <span class="icon fa-cogs"></span>
-                        <strong>Python</strong>
+                        <span class="icon solid fa-microchip"></span>
+                        <strong>C/C++</strong>
                     </li>
                     <li class="style3">
-                        <span class="icon solid fa-database"></span>
-                        <strong>SQL</strong>
+                        <span class="icon solid fas fa-user-shield"></span>
+                        <strong>Python</strong>
                     </li>
                     <li class="style4">
-                        <span class="icon solid fa-laptop"></span>
-                        <strong>React</strong>
+                        <span class="icon solid far fa-folder-tree"></span>
+                        <strong>SAP S/4HANA</strong>
                     </li>
                     <li class="style5">
-                        <span class="icon fa-cloud"></span>
-                        <strong>AWS</strong>
+                        <span class="icon solid fa-code"></span>
+                        <strong>HTML/CSS</strong>
                     </li>
                 </ul>
-                <p class="content">I have a strong foundation in various programming languages and frameworks. My skills include JavaScript, Python, SQL, React, and AWS. I am continually learning and adapting to new technologies to stay current in the ever-evolving field of software engineering.</p>
+                <p class="content">
+                    I possess a strong foundation in a variety of programming languages and frameworks. My expertise includes Java, C, C++, SAP S/4HANA, Python, and HTML. I am dedicated to continuously learning and adapting to new technologies to remain at the forefront of the ever-evolving field of software engineering.
+                </p>
                 <footer class="major">
-                    <ul class="actions special">
-                        <li><a href="generic.html" class="button">Learn More</a></li>
-                    </ul>
+
                 </footer>
-            </section>
+                </section>
 
             <!-- Get Started -->
             <section id="cta" class="main special">
                 <header class="major">
-                    <h2>Get In Touch</h2>
+                    <h2>Get In Touch <picture>
+                        <source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44b_1f3fd/512.webp" type="image/webp">
+                        <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44b_1f3fd/512.gif" alt="👋" width="25" height="25">
+                      </picture></h2>
                     <p>If you're interested in collaborating or have any questions, feel free to reach out!</p>
                 </header>
                 <footer class="major">
                     <ul class="actions special">
-                        <li><a href="contact.html" class="button primary">Contact Me</a></li>
-                        <li><a href="generic.html" class="button">Learn More</a></li>
+                        <li><a href="rrhmino@gmail.com" class="button primary">Contact Me</a></li>
+
                     </ul>
                 </footer>
             </section>
@@ -141,9 +295,10 @@
             <footer id="footer">
                 <section>
                     <h2>About This Site</h2>
-                    <p>This portfolio site showcases my work and skills as I embark on a career in software engineering. Feel free to explore and get in touch if you would like to know more or collaborate on a project.</p>
+                    <p>This portfolio site showcases my work and skills as I embark on a career in software engineering. Feel free to explore and get in touch if you would like to know more or collaborate on a project.
+                        Please leave any comments or thoughts here. <a href="https://github.com/fellowshiproject/Project1">GitHub</a> (I'd love to hear your feedback!😊) </p>
                     <ul class="actions">
-                        <li><a href="generic.html" class="button">Learn More</a></li>
+                        <li><a href="https://linkedin.com/in/hiarimino-ralison-rakotoson-54836b263" class="button">Connect on Linkedin</a></li>
                     </ul>
                 </section>
                 <section>
@@ -152,18 +307,42 @@
                         <dt>Address</dt>
                         <dd>Central Michigan University, Mt. Pleasant, MI 48859, USA</dd>
                         <dt>Email</dt>
-                        <dd><a href="mailto:hiarimino.rakotoson@example.com">hiarimino.rakotoson@example.com</a></dd>
+                        <dd><a href="rrhmino@gmail.com">Send an email</a></dd>
                     </dl>
                     <ul class="icons">
-                        <li><a href="https://twitter.com/yourprofile" class="icon brands fa-twitter alt"><span class="label">Twitter</span></a></li>
-                        <li><a href="https://linkedin.com/in/yourprofile" class="icon brands fa-linkedin alt"><span class="label">LinkedIn</span></a></li>
+                        <li><a href="https://linkedin.com/in/hiarimino-ralison-rakotoson-54836b263" class="icon brands fa-linkedin alt"><span class="label">LinkedIn</span></a></li>
                         <li><a href="https://github.com/fellowshiproject/Project1" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
                     </ul>
                 </section>
                 <p class="copyright">&copy; Hiarimino Ralison Rakotoson. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+                <style>
+                    </style>
+            
             </footer>
 
         </div>
+        <style>
+            #intro h2 {
+                font-family: 'Proxima Nova', monospace; /* Change font family for the header */
+                font-size: 1.75em; /* Increase font size */
+            }
+            #first h2 {
+                font-family: 'Proxima Nova', monospace; /* Change font family for the header */
+                font-size: 1.75em; /* Increase font size */
+            }
+            #second h2 {
+                font-family: 'Proxima Nova', monospace; /* Change font family for the header */
+                font-size: 1.75em; /* Increase font size */
+            }
+            #cta h2 {
+                font-family: 'Proxima Nova', monospace; /* Change font family for the header */
+                font-size: 1.75em; /* Increase font size */
+            }
+            #footer h2 {
+                font-family: 'Inconsolata', monospace; /* Change font family for the header */
+                font-size: 1.5em; /* Increase font size */
+            }
+            </style>
 
         <!-- Scripts -->
         <script src="assets/js/jquery.min.js"></script>
@@ -173,6 +352,45 @@
         <script src="assets/js/breakpoints.min.js"></script>
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var projects = document.querySelectorAll('#projects-wrapper .project');
+                var currentIndex = 0;
+                var totalProjects = projects.length;
+        
+                function showProject(index) {
+                    projects.forEach((project, i) => {
+                        project.classList.toggle('active', i === index);
+                        project.style.opacity = i === index ? 1 : 0; // Optional for smoother transition
+                    });
+                }
+        
+                function nextProject() {
+                    currentIndex = (currentIndex + 1) % totalProjects;
+                    showProject(currentIndex);
+                }
+        
+                function prevProject() {
+                    currentIndex = (currentIndex - 1 + totalProjects) % totalProjects;
+                    showProject(currentIndex);
+                }
+        
+                document.getElementById('nextBtn').addEventListener('click', function() {
+                    nextProject();
+                });
+        
+                document.getElementById('prevBtn').addEventListener('click', function() {
+                    prevProject();
+                });
+        
+                // Initialize by showing the first project
+                showProject(currentIndex);
+        
+                // Change project automatically every 7 seconds
+                setInterval(nextProject, 7000);
+            });
+        </script>
 
     </body>
 </html>
+
