@@ -2621,9 +2621,7 @@ input, select, textarea {
 	
 	ul.icons li {
 	    display: inline-block;
-	    margin: 0; /* Remove default margins */
 	    vertical-align: middle; /* Align items vertically */
-	    line-height: 1; /* Ensures consistent vertical alignment */
 	}
 	
 	ul.icons .icon {
@@ -2631,8 +2629,11 @@ input, select, textarea {
 	    vertical-align: middle; /* Aligns icons vertically */
 	}
 	
-	ul.icons .devpost img {
-	    vertical-align: middle; /* Aligns the Devpost image vertically */
+	ul.icons .icon.devpost {
+	    display: inline-block; /* Ensure inline-block display */
+	    vertical-align: middle; /* Align icon vertically */
+	    line-height: 0; /* Set line-height to 0 to remove any extra vertical space */
+	    margin-top: 3px; /* Adjust the top margin to lower the icon */
 	}
 	
 	ul.icons .label {
