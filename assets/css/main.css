@@ -2632,8 +2632,8 @@ input, select, textarea {
 	ul.icons .icon.devpost {
 	    display: inline-block; /* Ensure inline-block display */
 	    vertical-align: middle; /* Align icon vertically */
-	    line-height: 0; /* Set line-height to 0 to remove any extra vertical space */
-	    margin-top: 3px; /* Adjust the top margin to lower the icon */
+	    position: relative; /* Enable relative positioning */
+	    top: 5px; /* Move the Devpost icon 3px down */
 	}
 	
 	ul.icons .label {
@@ -2641,7 +2641,6 @@ input, select, textarea {
 	    vertical-align: middle;
 	    margin-left: 5px; /* Adjust spacing between icon and label */
 	}
-
 /* Section/Article */
 
 	section.special, article.special {
