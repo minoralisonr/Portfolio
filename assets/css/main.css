@@ -2626,14 +2626,15 @@ input, select, textarea {
 	
 	ul.icons .icon {
 	    display: inline-block; /* Ensures inline-block display for icons */
-	    vertical-align: middle; /* Aligns icons vertically */
+	    vertical-align: top; /* Align icons to the top */
+	    margin-top: 2px; /* Adjust top margin for spacing */
 	}
 	
 	ul.icons .icon.devpost {
 	    display: inline-block; /* Ensure inline-block display */
 	    vertical-align: middle; /* Align icon vertically */
 	    position: relative; /* Enable relative positioning */
-	    top: 5px; /* Move the Devpost icon 3px down */
+	    top: 3px; /* Move the Devpost icon 3px down */
 	}
 	
 	ul.icons .label {
