@@ -64,7 +64,7 @@
         }
 
         .pulse {
-            animation: pulse 1s ease-out 1; /* Apply pulse animation */
+            animation: pulse 2.0s ease-out 1; /* Apply pulse animation */
         }
     </style>
 </head>
@@ -96,8 +96,8 @@
                         const imgElement = document.getElementById('logo-image');
                 
                         let currentIndex = 0;
-                
-                        
+
+
                         function switchImage() {
                             currentIndex = (currentIndex + 1) % images.length;
                             imgElement.src = images[currentIndex]; 
