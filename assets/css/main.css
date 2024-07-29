@@ -2634,7 +2634,7 @@ input, select, textarea {
 	    display: inline-block; /* Ensure inline-block display */
 	    vertical-align: middle; /* Align Devpost icon vertically in the middle */
 	    position: relative; /* Enable relative positioning */
-	    top: 3px; /* Move the Devpost icon 3px down */
+	    top: 10px; /* Move the Devpost icon 3px down */
 	}
 	
 	ul.icons .label {
