@@ -17,6 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="path/to/proxima-nova.css">
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    
     <style>
         #header h1 {
             font-family: 'Inconsolata', monospace; /* Change font family for the header */
@@ -24,12 +25,7 @@
             color: rgba(255, 255, 255, 0.8); /* White color with 80% opacity */
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Black shadow with 60% opacity */
         }
-        #header .br {
-            font-family: 'Inconsolata', monospace; /* Change font family for the header */
-            font-size: 0.5em; /* Increase font size */
-            color: rgba(255, 255, 255, 0.8); /* White color with 80% opacity */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Black shadow with 60% opacity */
-        }
+        
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% {
             transform: translateY(0);
@@ -47,6 +43,29 @@
             animation: bounce 1.0s ease; /* Apply bounce animation */
         }
         
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        #pulse-image {
+            width: 200px; /* Resize image */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        .pulse {
+            animation: pulse 1s ease-out 1; /* Apply pulse animation */
+        }
     </style>
 </head>
 <body class="is-preload">
@@ -60,27 +79,25 @@
                 </span>
             
                 <script>
-                document.addEventListener("DOMContentLoaded", function() {
-                    // Array of image sources
-                    const images = [
-                        'images/mino1.png',
-                        'images/mino2.png' // Replace with the path to your second image
-                    ];
-            
-                    // Get the image element
-                    const imgElement = document.getElementById('logo-image');
-            
-                    let currentIndex = 0;
-            
-                    // Function to switch images
-                    function switchImage() {
-                        currentIndex = (currentIndex + 1) % images.length; // Move to the next image
-                        imgElement.src = images[currentIndex]; // Update image source
-                    }
-            
-                    // Switch image every 1 second (1000 milliseconds)
-                    setInterval(switchImage, 500);
-                });
+                    document.addEventListener("DOMContentLoaded", function() {
+                        
+                        const images = [
+                            'images/mino1.png',
+                            'images/mino2.png' 
+                        ];
+                
+                        // Get the image element
+                        const imgElement = document.getElementById('logo-image');
+                
+                        let currentIndex = 0;
+                
+                        
+                        function switchImage() {
+                            currentIndex = (currentIndex + 1) % images.length;
+                            imgElement.src = images[currentIndex]; 
+                        }
+                        setInterval(switchImage, 500);
+                    });
 
                 </script>
                 <br>
@@ -94,7 +111,7 @@
              
             <nav id="nav">
                 <ul>
-                    <li><a href="#intro" class="active">Introduction</a></li>
+                    <li><a href="#intro" id="intro-link" class="active">Introduction</a></li>
                     <li><a href="#first">Projects</a></li>
                     <li><a href="#second">Skills</a></li>
                     <li><a href="#cta">Get in Touch</a></li>
@@ -124,28 +141,9 @@
                                 <li><a href="Resume_Mino.pdf" class="button" download="Resume_Mino.pdf">Resume</a></li>
                             </ul>
                         </div>
-                        <span class="image"><img src="images/Untitled design.png" alt="" /></span>
-                        <style>
-                        @keyframes pulseGlow {
-                            0% {
-                                transform: scale(1);
-                                box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-                            }
-                            50% {
-                                transform: scale(1.1);
-                                box-shadow: 0 0 20px rgba(255, 255, 255, 1);
-                            }
-                            100% {
-                                transform: scale(1);
-                                box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-                            }
-                        }
-                        .image img {
-                            width: 50px; /* Resize logo */
-                            height: auto; /* Maintain aspect ratio */
-                            animation: pulseGlow 1s ease-out 1; /* Apply pulse and glow animation */
-                        }
-                        </style>
+                        <span class="image">
+                            <img src="images/Untitled design.png" alt="Pulse Image" id="pulse-image" />
+                        </span>
 
                     </div>
                 </section>
@@ -260,7 +258,7 @@
                 cursor: pointer; /* Pointer cursor on hover */
                 padding: 0; /* Remove padding */
                 margin: 0; /* Remove margin */
-                transition: color 0.3s ease; /* Smooth color transition */
+                
             }
 
             .nav-btn:hover {
@@ -390,6 +388,22 @@
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
         <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const introLink = document.getElementById('intro-link');
+                const pulseImage = document.getElementById('pulse-image');
+    
+                introLink.addEventListener('click', function() {
+                    // Add the pulse class to the image
+                    pulseImage.classList.add('pulse');
+    
+                    // Remove the pulse class after the animation completes to allow re-triggering
+                    pulseImage.addEventListener('animationend', function() {
+                        pulseImage.classList.remove('pulse');
+                    }, { once: true }); // Ensures the event listener is only used once
+                });
+            });
+        </script>
+        <script>
             document.addEventListener('DOMContentLoaded', function() {
                 var projects = document.querySelectorAll('#projects-wrapper .project');
                 var currentIndex = 0;
@@ -424,10 +438,25 @@
                 showProject(currentIndex);
         
                 // Change project automatically every 7 seconds
-                setInterval(nextProject, 7000);
+                setInterval(nextProject, 4000);
             });
         </script>
-
+        <script>
+            // JavaScript to handle click event and animation
+            document.addEventListener("DOMContentLoaded", function() {
+                const introductionLink = document.getElementById('introduction-link');
+                const imgElement = document.getElementById('pulse-image');
+    
+                introductionLink.addEventListener('click', function() {
+                    imgElement.classList.add('pulse');
+    
+                    // Remove the pulse class after the animation completes
+                    imgElement.addEventListener('animationend', function() {
+                        imgElement.classList.remove('pulse');
+                    }, { once: true });
+                });
+            });
+        </script>
     </body>
 </html>
 
