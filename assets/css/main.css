@@ -2621,18 +2621,18 @@ input, select, textarea {
 	
 	ul.icons li {
 	    display: inline-block;
-	    vertical-align: middle; /* Align items vertically */
+	    vertical-align: top; /* Align items to the top */
 	}
 	
 	ul.icons .icon {
 	    display: inline-block; /* Ensures inline-block display for icons */
 	    vertical-align: top; /* Align icons to the top */
-	    margin-top: 2px; /* Adjust top margin for spacing */
+	    margin-top: 0; /* Reset top margin */
 	}
 	
 	ul.icons .icon.devpost {
 	    display: inline-block; /* Ensure inline-block display */
-	    vertical-align: middle; /* Align icon vertically */
+	    vertical-align: middle; /* Align Devpost icon vertically in the middle */
 	    position: relative; /* Enable relative positioning */
 	    top: 3px; /* Move the Devpost icon 3px down */
 	}
@@ -2642,6 +2642,7 @@ input, select, textarea {
 	    vertical-align: middle;
 	    margin-left: 5px; /* Adjust spacing between icon and label */
 	}
+
 /* Section/Article */
 
 	section.special, article.special {
