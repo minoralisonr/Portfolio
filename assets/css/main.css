@@ -2631,7 +2631,7 @@ input, select, textarea {
 	}
 	
 	ul.icons .icon.devpost {
-	    vertical-align: middle; /* Align Devpost icon vertically in the middle */
+	    vertical-align: bottom; /* Align Devpost icon vertically in the middle */
 	    position: relative; /* Enable relative positioning */
 	    top: 10px; /* Move the Devpost icon 10 pixels down */
 	}
