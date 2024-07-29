@@ -24,6 +24,12 @@
             color: rgba(255, 255, 255, 0.8); /* White color with 80% opacity */
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Black shadow with 60% opacity */
         }
+        #header .br {
+            font-family: 'Inconsolata', monospace; /* Change font family for the header */
+            font-size: 0.5em; /* Increase font size */
+            color: rgba(255, 255, 255, 0.8); /* White color with 80% opacity */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Black shadow with 60% opacity */
+        }
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% {
             transform: translateY(0);
@@ -36,9 +42,9 @@
             }
         }
         .logo img {
-            width: 60px; /* Resize logo */
+            width: 120px; /* Resize logo */
             height: auto; /* Maintain aspect ratio */
-            animation: bounce 1.5s ease; /* Apply bounce animation */
+            animation: bounce 1.0s ease; /* Apply bounce animation */
         }
         
     </style>
@@ -49,14 +55,43 @@
 
             <!-- Header -->
             <header id="header" class="alt">
-                <span class="logo"><img src="images/code-2.svg" alt="" /></span>
+                <span class="logo">
+                    <img id="logo-image" src="images/girlface1-removebg-preview.png" alt="Logo" />
+                </span>
+            
+                <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    // Array of image sources
+                    const images = [
+                        'images/mino1.png',
+                        'images/mino2.png' // Replace with the path to your second image
+                    ];
+            
+                    // Get the image element
+                    const imgElement = document.getElementById('logo-image');
+            
+                    let currentIndex = 0;
+            
+                    // Function to switch images
+                    function switchImage() {
+                        currentIndex = (currentIndex + 1) % images.length; // Move to the next image
+                        imgElement.src = images[currentIndex]; // Update image source
+                    }
+            
+                    // Switch image every 1 second (1000 milliseconds)
+                    setInterval(switchImage, 500);
+                });
+
+                </script>
+                <br>
                 <h1>Hiarimino Ralison Rakotoson</h1>
-                Tongasoa, Bienvenue, Welcome to my portfolio!<br>
+                <br>Tongasoa, Bienvenue, Welcome to my portfolio!</br>
  
 				</p>
             </header>
 
             <!-- Nav -->
+             
             <nav id="nav">
                 <ul>
                     <li><a href="#intro" class="active">Introduction</a></li>
@@ -300,25 +335,23 @@
                 <section>
                     <h2>About This Site</h2>
                     <p>This portfolio site showcases my work and skills as I embark on a career in software engineering. Feel free to explore and get in touch if you would like to know more or collaborate on a project.
-                        Please leave any comments or thoughts here. <a href="https://github.com/fellowshiproject/Project1">GitHub</a> (I'd love to hear your feedback!😊) </p>
+                        Please leave any comments or thoughts here. <a href="https://github.com/fellowshiproject/Portfolio">GitHub</a> (I'd love to hear your feedback!😊) </p>
                     <ul class="actions">
                         <li><a href="https://linkedin.com/in/hiarimino-ralison-rakotoson-54836b263" class="button">Connect on Linkedin</a></li>
                     </ul>
                 </section>
                 <section>
-                    <h2>Contact Information</h2>
+                    <h2>Hiarimino Ralison Rakotoson</h2>
                     <dl class="alt">
-                        <dt>Address</dt>
-                        <dd>Central Michigan University, Mt. Pleasant, MI 48859, USA</dd>
-                        <dt>Email</dt>
-                        <dd><a href="rrhmino@gmail.com">Send an email</a></dd>
+                        <dl>. Software Engineering Fellow at Headstarter AI
+                        <dl>. Aspiring Software and Data Engineer | Problem solving & AI Driven
                     </dl>
                     <ul class="icons">
                         <li><a href="https://linkedin.com/in/hiarimino-ralison-rakotoson-54836b263" class="icon brands fa-linkedin alt"><span class="label">LinkedIn</span></a></li>
                         <li><a href="https://github.com/fellowshiproject/Portfolio" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
                     </ul>
                 </section>
-                <p class="copyright">&copy; Stellar. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+                <p class= "copyright">July 2024 &copy; Stellar. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
                 <style>
                     </style>
             
