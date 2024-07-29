@@ -2621,12 +2621,24 @@ input, select, textarea {
 	
 	ul.icons li {
 	    display: inline-block;
-	    margin-right: 10px; /* Adjust as needed */
-	    vertical-align: middle; /* Aligns items vertically */
+	    margin: 0; /* Remove default margins */
+	    vertical-align: middle; /* Align items vertically */
+	    line-height: 1; /* Ensures consistent vertical alignment */
 	}
 	
-	ul.icons li:last-child {
-	    padding-right: 0 !important;
+	ul.icons .icon {
+	    display: inline-block; /* Ensures inline-block display for icons */
+	    vertical-align: middle; /* Aligns icons vertically */
+	}
+	
+	ul.icons .devpost img {
+	    vertical-align: middle; /* Aligns the Devpost image vertically */
+	}
+	
+	ul.icons .label {
+	    display: inline-block;
+	    vertical-align: middle;
+	    margin-left: 5px; /* Adjust spacing between icon and label */
 	}
 
 /* Section/Article */
