@@ -458,22 +458,64 @@
             });
         </script>
         <script>
-            // JavaScript to handle click event and animation
-            document.addEventListener("DOMContentLoaded", function() {
-                const introductionLink = document.getElementById('introduction-link');
-                const imgElement = document.getElementById('pulse-image');
-    
-                introductionLink.addEventListener('click', function() {
-                    imgElement.classList.add('pulse');
-    
-                    // Remove the pulse class after the animation completes
-                    imgElement.addEventListener('animationend', function() {
-                        imgElement.classList.remove('pulse');
-                    }, { once: true });
-                });
-            });
-        
-        </script>
+	    document.addEventListener("DOMContentLoaded", function() {
+	        const introductionLink = document.getElementById('introduction-link');
+	        const imgElement = document.getElementById('pulse-image');
+	        
+	        let rotationInterval; // Variable to store the interval ID
+	        let interactionTimeout; // Variable to store the timeout ID for resuming rotation
+	
+	        function startRotation() {
+	            let imgIndex = 0;
+	            const images = imgElement.getElementsByClassName('project-image');
+	            if (images.length > 0) {
+	                function showNextImage() {
+	                    images[imgIndex].classList.remove('active');
+	                    imgIndex = (imgIndex + 1) % images.length;
+	                    images[imgIndex].classList.add('active');
+	                }
+	                showNextImage(); // Show the first image
+	                rotationInterval = setInterval(showNextImage, 5000); // Change image every 5 seconds
+	            }
+	        }
+	
+	        function stopRotation() {
+	            if (rotationInterval) {
+	                clearInterval(rotationInterval);
+	                rotationInterval = null;
+	            }
+	        }
+	
+	        function resumeRotation() {
+	            stopRotation();
+	            startRotation();
+	        }
+	
+	        // Handle pulse animation on introduction link click
+	        introductionLink.addEventListener('click', function() {
+	            imgElement.classList.add('pulse');
+	            // Remove the pulse class after the animation completes
+	            imgElement.addEventListener('animationend', function() {
+	                imgElement.classList.remove('pulse');
+	            }, { once: true });
+	        });
+	
+	        // Start image rotation initially
+	        startRotation();
+	
+	        // Stop image rotation when navigation arrows are clicked and resume after 3 seconds of inactivity
+	        function handleArrowClick() {
+	            stopRotation();
+	            if (interactionTimeout) {
+	                clearTimeout(interactionTimeout);
+	            }
+	            interactionTimeout = setTimeout(resumeRotation, 3000); 
+	        }
+	
+	        document.getElementById('prevBtn').addEventListener('click', handleArrowClick);
+	        document.getElementById('nextBtn').addEventListener('click', handleArrowClick);
+	    });
+	</script>
 
 
     </body>
