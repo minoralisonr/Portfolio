@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+ <!DOCTYPE HTML>
 <html>
 <head>
     <title>Projects details</title>
@@ -6,10 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-lK31lL6D6MZQJ1fZm3weDej/L+7+5H3JWb1jW6z/37bC0RvIgNc4s6gR9gQSeNfrbH2L6CmYx4nvY13dul8QFQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" href="images/mino1.png">
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    
     <!-- Google Fonts -->
-
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
     <style>
         #header {
             position: relative;
@@ -20,11 +23,13 @@
         }
         .home-btn {
             position: absolute;
-            top: 7px;
-            left: 7px;
+            top: 10px;
+            left: 10px;
             background: none;
             border: none;
-            font-size: 15px;
+            font-size: 18px;
+            width: 7px; /* Specific width */
+            height: 7px; /* Specific height */
             color: #007bff;
             cursor: pointer;
             transition: color 0.3s ease;
@@ -59,7 +64,11 @@
             transition: opacity 1s ease-in-out;
         }
 
-        
+        .project.active {
+            display: block;
+            opacity: 1;
+        }
+
         .project-nav {
             position: fixed; /* Use fixed positioning to place arrows relative to the viewport */
             top: 50%;
@@ -97,7 +106,10 @@
         .nav-btn:focus {
             outline: none;
         }
-     
+
+        .project img {
+            width: 100%; /* Make sure the image scales properly */
+        }
     </style>
 </head>
 <body class="is-preload">
@@ -169,22 +181,12 @@
                             </div>
                         </div>
                     </div>
-                  <ul class="project-controls">
-                      <li><a href="#" id="prevBtn" class="icon"><i class="fas fa-chevron-left"></i></a></li>
-                      <li><a href="#" id="nextBtn" class="icon"><i class="fas fa-chevron-right"></i></a></li>
-                  </ul>
-                  
-                  <!-- Example project elements -->
-                  <div class="project">
-                      <div class="project-image">Image 1</div>
-                      <div class="project-image">Image 2</div>
-                  </div>
-                    /*<div class="project-nav left">
+                    <div class="project-nav left">
                         <button id="prevBtn" class="nav-btn"><i class="fa fa-chevron-left"></i></button>
                     </div>
                     <div class="project-nav right">
                         <button id="nextBtn" class="nav-btn"><i class="fa fa-chevron-right"></i></button>
-                    </div>*/
+                    </div>
                 </div>
                 <style>
                     #project1 h2 {
@@ -240,7 +242,7 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
-     <script>
+    <script>
         $(document).ready(function() {
             let currentIndex = 0;
             const projects = $('.project');
@@ -280,7 +282,6 @@
             rotateImages();
         });
         </script>
-
 
     </body>
 </html>
