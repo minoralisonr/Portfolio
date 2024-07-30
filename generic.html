@@ -1,4 +1,4 @@
- <!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html>
 <head>
     <title>Projects details</title>
@@ -7,10 +7,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-lK31lL6D6MZQJ1fZm3weDej/L+7+5H3JWb1jW6z/37bC0RvIgNc4s6gR9gQSeNfrbH2L6CmYx4nvY13dul8QFQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="images/mino1.png">
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+     
     <style>
         #header {
             position: relative;
@@ -21,13 +23,11 @@
         }
         .home-btn {
             position: absolute;
-            top: 10px;
-            left: 10px;
+            top: 7px;
+            left: 7px;
             background: none;
             border: none;
-            font-size: 18px;
-            width: 7px; /* Specific width */
-            height: 7px; /* Specific height */
+            font-size: 15px;
             color: #007bff;
             cursor: pointer;
             transition: color 0.3s ease;
@@ -66,48 +66,39 @@
             display: block;
             opacity: 1;
         }
-
-        .project-nav {
-            position: fixed; /* Use fixed positioning to place arrows relative to the viewport */
+        .project-controls {
+            position: absolute;
             top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
             transform: translateY(-50%);
-            z-index: 1;
-            font-size: 24px;
+        }
+        
+        .project-controls .icon {
             background: none;
             border: none;
-            cursor: pointer;
-        }
-
-        .project-nav.left {
-            left: 20px; /* Position arrow from the left edge */
-        }
-
-        .project-nav.right {
-            right: 20px; /* Position arrow from the right edge */
-        }
-
-        .nav-btn {
-            background: none;
-            border: none;
-            font-size: 24px;
+            font-size: 24px; /* Adjust as needed */
             color: #007bff;
             cursor: pointer;
-            padding: 0;
-            margin: 0;
             transition: color 0.3s ease;
         }
-
-        .nav-btn:hover {
+     
+       .project-controls .icon:hover {
             color: #0056b3;
         }
-
-        .nav-btn:focus {
+        
+        .project-controls .icon:focus {
             outline: none;
         }
-
-        .project img {
-            width: 100%; /* Make sure the image scales properly */
+        
+        .project-controls .icon i {
+            vertical-align: middle;
         }
+        .project img {
+            width: 75%; /* Make sure the image scales properly */
+        }
+     
     </style>
 </head>
 <body class="is-preload">
@@ -179,12 +170,22 @@
                             </div>
                         </div>
                     </div>
-                    <div class="project-nav left">
+                  <ul class="project-controls">
+                      <li><a href="#" id="prevBtn" class="icon"><i class="fas fa-chevron-left"></i></a></li>
+                      <li><a href="#" id="nextBtn" class="icon"><i class="fas fa-chevron-right"></i></a></li>
+                  </ul>
+                  
+                  <!-- Example project elements -->
+                  <div class="project">
+                      <div class="project-image">Image 1</div>
+                      <div class="project-image">Image 2</div>
+                  </div>
+                    /*<div class="project-nav left">
                         <button id="prevBtn" class="nav-btn"><i class="fa fa-chevron-left"></i></button>
                     </div>
                     <div class="project-nav right">
                         <button id="nextBtn" class="nav-btn"><i class="fa fa-chevron-right"></i></button>
-                    </div>
+                    </div>*/
                 </div>
                 <style>
                     #project1 h2 {
@@ -241,45 +242,45 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
-        $(document).ready(function() {
-            let currentIndex = 0;
-            const projects = $('.project');
-            const totalProjects = projects.length;
-
-            function showProject(index) {
-                projects.removeClass('active');
-                projects.eq(index).addClass('active');
-            }
-
-            $('#nextBtn').click(function() {
-                currentIndex = (currentIndex + 1) % totalProjects;
-                showProject(currentIndex);
-            });
-
-            $('#prevBtn').click(function() {
-                currentIndex = (currentIndex - 1 + totalProjects) % totalProjects;
-                showProject(currentIndex);
-            });
-
-            // Set up image rotation for the active project
-            function rotateImages() {
-                const activeProject = projects.eq(currentIndex);
-                const images = activeProject.find('.project-image');
-                let imgIndex = 0;
-
-                function showNextImage() {
-                    images.removeClass('active');
-                    images.eq(imgIndex).addClass('active');
-                    imgIndex = (imgIndex + 1) % images.length;
-                }
-
-                showNextImage(); // Show the first image
-                setInterval(showNextImage, 7000); // Change image every 5 seconds
-            }
-
-            rotateImages();
-        });
-        </script>
+    $(document).ready(function() {
+          let currentIndex = 0;
+          const projects = $('.project');
+          const totalProjects = projects.length;
+  
+          function showProject(index) {
+              projects.removeClass('active');
+              projects.eq(index).addClass('active');
+          }
+  
+          $('#nextBtn').click(function() {
+              currentIndex = (currentIndex + 1) % totalProjects;
+              showProject(currentIndex);
+          });
+  
+          $('#prevBtn').click(function() {
+              currentIndex = (currentIndex - 1 + totalProjects) % totalProjects;
+              showProject(currentIndex);
+          });
+  
+          // Set up image rotation for the active project
+          function rotateImages() {
+              const activeProject = projects.eq(currentIndex);
+              const images = activeProject.find('.project-image');
+              let imgIndex = 0;
+  
+              function showNextImage() {
+                  images.removeClass('active');
+                  images.eq(imgIndex).addClass('active');
+                  imgIndex = (imgIndex + 1) % images.length;
+              }
+  
+              showNextImage(); // Show the first image
+              setInterval(showNextImage, 7000); // Change image every 7 seconds
+          }
+  
+          rotateImages();
+      });
+  </script>
 
     </body>
 </html>
