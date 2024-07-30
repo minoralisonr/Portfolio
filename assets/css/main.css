@@ -2630,12 +2630,6 @@ input, select, textarea {
 	    margin-top: 0; /* Reset top margin */
 	}
 	
-	ul.icons .icon.devpost {
-	    vertical-align: bottom; /* Align Devpost icon vertically in the middle */
-	    position: relative; /* Enable relative positioning */
-	    top: 10px; /* Move the Devpost icon 10 pixels down */
-	}
-	
 	ul.icons .label {
 	    display: inline-block;
 	    vertical-align: middle;
