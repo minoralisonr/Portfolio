@@ -59,41 +59,43 @@
             transition: opacity 1s ease-in-out;
         }
 
-        .project.active {
-            display: block;
-            opacity: 1;
-        }
-        .project-controls {
-            position: absolute;
+        
+        .project-nav {
+            position: fixed; /* Use fixed positioning to place arrows relative to the viewport */
             top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
             transform: translateY(-50%);
-        }
-
-        .project-controls .icon {
+            z-index: 1;
+            font-size: 24px;
             background: none;
             border: none;
-            font-size: 24px; /* Adjust as needed */
+            cursor: pointer;
+        }
+
+        .project-nav.left {
+            left: 20px; /* Position arrow from the left edge */
+        }
+
+        .project-nav.right {
+            right: 20px; /* Position arrow from the right edge */
+        }
+
+        .nav-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
             color: #007bff;
             cursor: pointer;
+            padding: 0;
+            margin: 0;
             transition: color 0.3s ease;
         }
-        
-        .project-controls .icon:hover {
+
+        .nav-btn:hover {
             color: #0056b3;
         }
-        
-        .project-controls .icon:focus {
+
+        .nav-btn:focus {
             outline: none;
-        }
-        
-        .project-controls .icon i {
-            vertical-align: middle;
-        }
-        .project img {
-            width: 75%; /* Make sure the image scales properly */
         }
      
     </style>
@@ -238,46 +240,47 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
-    <script>
-    $(document).ready(function() {
-          let currentIndex = 0;
-          const projects = $('.project');
-          const totalProjects = projects.length;
-  
-          function showProject(index) {
-              projects.removeClass('active');
-              projects.eq(index).addClass('active');
-          }
-  
-          $('#nextBtn').click(function() {
-              currentIndex = (currentIndex + 1) % totalProjects;
-              showProject(currentIndex);
-          });
-  
-          $('#prevBtn').click(function() {
-              currentIndex = (currentIndex - 1 + totalProjects) % totalProjects;
-              showProject(currentIndex);
-          });
-  
-          // Set up image rotation for the active project
-          function rotateImages() {
-              const activeProject = projects.eq(currentIndex);
-              const images = activeProject.find('.project-image');
-              let imgIndex = 0;
-  
-              function showNextImage() {
-                  images.removeClass('active');
-                  images.eq(imgIndex).addClass('active');
-                  imgIndex = (imgIndex + 1) % images.length;
-              }
-  
-              showNextImage(); // Show the first image
-              setInterval(showNextImage, 7000); // Change image every 7 seconds
-          }
-  
-          rotateImages();
-      });
-  </script>
+     <script>
+        $(document).ready(function() {
+            let currentIndex = 0;
+            const projects = $('.project');
+            const totalProjects = projects.length;
+
+            function showProject(index) {
+                projects.removeClass('active');
+                projects.eq(index).addClass('active');
+            }
+
+            $('#nextBtn').click(function() {
+                currentIndex = (currentIndex + 1) % totalProjects;
+                showProject(currentIndex);
+            });
+
+            $('#prevBtn').click(function() {
+                currentIndex = (currentIndex - 1 + totalProjects) % totalProjects;
+                showProject(currentIndex);
+            });
+
+            // Set up image rotation for the active project
+            function rotateImages() {
+                const activeProject = projects.eq(currentIndex);
+                const images = activeProject.find('.project-image');
+                let imgIndex = 0;
+
+                function showNextImage() {
+                    images.removeClass('active');
+                    images.eq(imgIndex).addClass('active');
+                    imgIndex = (imgIndex + 1) % images.length;
+                }
+
+                showNextImage(); // Show the first image
+                setInterval(showNextImage, 7000); // Change image every 5 seconds
+            }
+
+            rotateImages();
+        });
+        </script>
+
 
     </body>
 </html>
