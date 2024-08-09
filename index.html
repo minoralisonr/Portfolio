@@ -154,7 +154,7 @@
                                     <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f199/512.gif" alt="🆙" width="25" height="25">
                                   </picture></p>
                             <ul class="actions">
-                                <li><a href="Resume.pdf" class="button" download="Resume_Mino.pdf">Resume</a></li>
+                                <li><a href="Resume.pdf" class="button" download="Resume.pdf">Resume</a></li>
                             </ul>
                         </div>
                         <span class="image">
@@ -504,13 +504,13 @@
 	        // Start image rotation initially
 	        startRotation();
 	
-	        // Stop image rotation when navigation arrows are clicked and resume after 3 seconds of inactivity
+	        // Stop image rotation when navigation arrows are clicked and  after 3 seconds of inactivity
 	        function handleArrowClick() {
 	            stopRotation();
 	            if (interactionTimeout) {
 	                clearTimeout(interactionTimeout);
 	            }
-	            interactionTimeout = setTimeout(resumeRotation, 5000); 
+	            interactionTimeout = setTimeout(Rotation, 5000); 
 	        }
 	
 	        document.getElementById('prevBtn').addEventListener('click', handleArrowClick);
