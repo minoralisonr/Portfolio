@@ -275,8 +275,8 @@
 }
 
 .project-image {
-  max-width: 280px;
-  max-height: 200px;
+  max-width: 130px;
+  max-height: 80px;
   width: 100%;
   height: auto;
   object-fit: contain;
@@ -495,8 +495,8 @@ html {
   }
   
   .project-image {
-    max-width: 220px;
-    max-height: 160px;
+    max-width: 130px;
+    max-height: 80px;
   }
   
   .project h3 {
@@ -524,8 +524,8 @@ html {
   }
   
   .project-image {
-    max-width: 180px;
-    max-height: 130px;
+    max-width: 130px;
+    max-height: 80px;
   }
 
   #header h1 {
