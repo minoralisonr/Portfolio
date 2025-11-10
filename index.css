@@ -275,8 +275,8 @@
 }
 
 .project-image {
-  max-width: 130px;
-  max-height: 80px;
+  max-width: 50px;
+  max-height: 40px;
   width: 100%;
   height: auto;
   object-fit: contain;
@@ -290,7 +290,7 @@
 
 .project-image:hover {
   transform: scale(1.08) translateY(-8px) rotate(2deg);
-  box-shadow: 0 16px 40px rgba(100, 181, 246, 0.4);
+  box-shadow: 0 10px 20px rgba(100, 181, 246, 0.4);
   border-color: rgba(100, 181, 246, 0.5);
 }
 
@@ -495,8 +495,8 @@ html {
   }
   
   .project-image {
-    max-width: 130px;
-    max-height: 80px;
+    max-width: 50px;
+    max-height: 40px;
   }
   
   .project h3 {
@@ -524,8 +524,8 @@ html {
   }
   
   .project-image {
-    max-width: 130px;
-    max-height: 80px;
+    max-width: 50px;
+    max-height: 40px;
   }
 
   #header h1 {
