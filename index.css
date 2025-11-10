@@ -82,22 +82,13 @@
   left: -100%;
   width: 200%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(100, 181, 246, 0.1),
-    transparent
-  );
+  background: linear-gradient(90deg, transparent, rgba(100, 181, 246, 0.1), transparent);
   animation: shimmer 3s infinite;
 }
 
 @keyframes shimmer {
-  0% {
-    left: -100%;
-  }
-  100% {
-    left: 100%;
-  }
+  0% { left: -100%; }
+  100% { left: 100%; }
 }
 
 #projects-container {
@@ -132,11 +123,7 @@
   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   padding: 30px;
   text-align: center;
-  background: linear-gradient(
-    135deg,
-    rgba(100, 181, 246, 0.05),
-    rgba(100, 181, 246, 0.02)
-  );
+  background: linear-gradient(135deg, rgba(100, 181, 246, 0.05), rgba(100, 181, 246, 0.02));
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
@@ -150,12 +137,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.1),
-    transparent
-  );
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
   transition: left 0.5s ease;
 }
 
@@ -265,7 +247,7 @@
 
 /* Modern Image Container with Grid */
 .image-container {
-  margin-top: 40px;
+  margin-top: 30px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
@@ -274,48 +256,10 @@
   animation: fadeInUp 0.8s ease 0.5s both;
 }
 
-#projects-wrapper .project img {
-  margin-bottom: 10px;
-  /* ADD THESE SIZE CONTROLS */
-  max-width: 200px !important;      
-  max-height: 150px !important;   
-  width: auto !important;
-  height: auto !important;
-  object-fit: contain;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Also add this for images with the class */
-.project-image {
-  max-width: 200px !important;
-  max-height: 150px !important;
-  width: auto !important;
-  height: auto !important;
-  object-fit: contain;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 2px solid rgba(100, 181, 246, 0.2);
-  background: rgba(0, 0, 0, 0.2);
-  padding: 10px;
-}
-
 .project-image:hover {
   transform: scale(1.08) translateY(-8px) rotate(2deg);
   box-shadow: 0 16px 40px rgba(100, 181, 246, 0.4);
   border-color: rgba(100, 181, 246, 0.5);
-}
-
-/* Container styling */
-.image-container {
-  margin-top: 30px;
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
 }
 
 /* ==================== SIZE PRESETS ==================== */
@@ -332,38 +276,22 @@
 /* SMALL (150px × 110px) - Uncomment to use */
 /*
 #projects-wrapper .project img,
-.project-image {
-  max-width: 150px !important;
-  max-height: 110px !important;
-}
-*/
+.project-image
 
 /* ==================== RESPONSIVE SIZES ==================== */
-
 @media screen and (max-width: 768px) {
   #projects-wrapper .project img,
-  .project-image {
+  .project-image,
+  #projects-wrapper .project .image-container img,
+  .project .image-container img {
     max-width: 180px !important;
     max-height: 130px !important;
   }
-}
 
-@media screen and (max-width: 480px) {
-  #projects-wrapper .project img,
-  .project-image {
-    max-width: 150px !important;
-    max-height: 110px !important;
-  }
-  
-  .image-container {
-    gap: 10px;
-  }
-}
-  
   .project h3 {
     font-size: 1.4em;
   }
-  
+
   #header h1 {
     font-size: 3.5em;
   }
@@ -371,27 +299,23 @@
   .image-container {
     grid-template-columns: 1fr;
   }
+}
 
 @media screen and (max-width: 480px) {
   #projects-container {
     padding: 20px 60px;
   }
-  
+
   .nav-btn {
     width: 45px;
     height: 45px;
     font-size: 20px;
   }
-  
-  .project-image {
-    max-width: 50px;
-    max-height: 40px;
-  }
 
   #header h1 {
     font-size: 2.5em;
   }
-  
+
   .logo img {
     width: 120px;
   }
@@ -403,4 +327,43 @@
   .project p {
     font-size: 0.95em;
   }
+
+  #projects-wrapper .project img,
+  .project-image,
+  #projects-wrapper .project .image-container img,
+  .project .image-container img {
+    max-width: 150px !important;
+    max-height: 110px !important;
+  }
+}
+
+/* ==================== PROJECT IMAGE SIZES FIX ==================== */
+#projects-wrapper .project img,
+.project-image,
+#projects-wrapper .project .image-container img,
+.project .image-container img {
+  max-width: 200px !important;
+  max-height: 150px !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid rgba(100, 181, 246, 0.2);
+  background: rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+/* Remove any inline styles from HTML if possible */
+#projects-wrapper .project img[style],
+.project-image[style] {
+  max-width: 200px !important;
+  max-height: 150px !important;
+  width: auto !important;
+  height: auto !important;
 }
