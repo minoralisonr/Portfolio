@@ -21,7 +21,7 @@
         <img id="logo-image" src="images/girlface1-removebg-preview.png" alt="Logo" />
       </span>
       <h1>Hiarimino Ralison Rakotoson</h1>
-      <br>Software Engineering | Problem Solving | ML | AI</br>
+      <br>Software Engineering | Problem Solving | Machine Learning | AI</br>
       <p>Tongasoa, Bienvenue, Welcome!</p>
     </header>
 
@@ -59,37 +59,66 @@
       <section id="first" class="main special">
         <header class="major">
           <h2>Projects 🌱</h2>
+          <p>Explore my most recent projects below</p>
         </header>
+        
         <div id="projects-container">
+          <!-- Left Navigation Button -->
           <div class="project-nav left">
-            <button id="prevBtn" class="nav-btn"><i class="fa fa-chevron-left"></i></button>
+            <button id="prevBtn" class="nav-btn" aria-label="Previous project">
+              <i class="fa fa-chevron-left"></i>
+            </button>
           </div>
+          
+          <!-- Right Navigation Button -->
+          <div class="project-nav right">
+            <button id="nextBtn" class="nav-btn" aria-label="Next project">
+              <i class="fa fa-chevron-right"></i>
+            </button>
+          </div>
+
+          <!-- Projects Wrapper -->
           <div id="projects-wrapper">
-            <div class="project" id="project1">
+            <!-- Project 1 -->
+            <div class="project active" id="project1">
               <span class="icon solid major style1 fa-laptop-code"></span>
-              <h3>Project 1</h3>
-              <p>Assembler Implementation. Programming language: Java.</p>
+              <h3>Project 1: Assembler Implementation</h3>
+              <p><strong>Description:</strong> Software program that serves as an Assembler, translating assembly language instructions into binary machine code.</p>
+              <p><strong>Functionalities:</strong> Converts human-readable assembly code into machine language.</p>
+              <p><strong>Tools:</strong> HackSimulator, Java IDE</p>
+              <div class="image-container">
+                <img class="project-image" src="images/Assembler-1024x576.jpg.webp" alt="Assembler Implementation" />
+                <img class="project-image" src="images/vecteezy_computer-software-icons_.jpg" alt="Software Icons" />
+              </div>
             </div>
+
+            <!-- Project 2 -->
             <div class="project" id="project2">
               <span class="icon solid major style3 far fa-network-wired"></span>
-              <h3>Project 2</h3>
-              <p>Weather Station with Real-time Clock. Programming language: C/C++.</p>
+              <h3>Project 2: Weather Station with Real-time Clock</h3>
+              <p><strong>Description:</strong> Arduino device to collect local weather data (temperature and humidity).</p>
+              <p><strong>Functionalities:</strong> Real-time monitoring with clock integration for timestamped data.</p>
+              <p><strong>Tools:</strong> Arduino IDE, Arduino Kit, C/C++</p>
+              <div class="image-container">
+                <img class="project-image" src="images/image.png" alt="Weather Station Arduino Project" />
+              </div>
             </div>
+
+            <!-- Project 3 -->
             <div class="project" id="project3">
               <span class="icon solid major style5 fa-database"></span>
-              <h3>Project 3</h3>
-              <p>Task Management Tool. Programming language: Java.</p>
+              <h3>Project 3: Task Management Tool</h3>
+              <p><strong>Description:</strong> Tool for students to organize and prioritize tasks.</p>
+              <p><strong>Functionalities:</strong> Sorts tasks by due date and highlights importance.</p>
+              <p><strong>Tools:</strong> GUI Java FX/Swing, Java IDE</p>
+              <div class="image-container">
+                <img class="project-image" src="images/task-management-abstract-concept-illustration_335657-2127.jpg" alt="Task Management Tool Interface" />
+              </div>
             </div>
           </div>
-          <div class="project-nav right">
-            <button id="nextBtn" class="nav-btn"><i class="fa fa-chevron-right"></i></button>
-          </div>
+
+          <!-- Indicator dots will be inserted here by JavaScript -->
         </div>
-        <footer class="major">
-          <ul class="actions special">
-            <li><a href="project.html" class="button primary">Learn More</a></li>
-          </ul>
-        </footer>
       </section>
 
       <!-- Skills -->
