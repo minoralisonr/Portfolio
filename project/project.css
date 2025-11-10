@@ -1,0 +1,96 @@
+#header {
+  position: relative;
+}
+
+#header h1 {
+  font-family: 'Inconsolata', monospace;
+  font-size: 2.5em;
+}
+
+.home-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 30px;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.home-button:hover {
+  color: #ffffff;
+}
+
+#projects-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+#projects-wrapper {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.project {
+  flex: 1;
+  display: none;
+  transition: opacity 1s ease-in-out;
+}
+
+.project.active {
+  display: block;
+  opacity: 1;
+}
+
+.project-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.project-nav.left {
+  left: 20px;
+}
+
+.project-nav.right {
+  right: 20px;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #007bff;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.nav-btn:hover {
+  color: #0056b3;
+}
+
+.nav-btn:focus {
+  outline: none;
+}
+
+.project img {
+  width: 100%;
+}
+
+#project1 h2,
+#project2 h2,
+#project3 h2 {
+  font-family: 'Proxima Nova', monospace;
+  font-size: 1.25em;
+}
