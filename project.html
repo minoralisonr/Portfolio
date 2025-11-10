@@ -24,12 +24,25 @@
     <div id="main">
       <section id="content" class="main">
         <div id="projects-container">
+          <!-- Navigation Buttons -->
+          <div class="project-nav left">
+            <button id="prevBtn" class="nav-btn" aria-label="Previous project">
+              <i class="fa fa-chevron-left"></i>
+            </button>
+          </div>
+          <div class="project-nav right">
+            <button id="nextBtn" class="nav-btn" aria-label="Next project">
+              <i class="fa fa-chevron-right"></i>
+            </button>
+          </div>
+
+          <!-- Projects Wrapper -->
           <div id="projects-wrapper">
             <div class="project active" id="project1">
               <h2>Project 1: Assembler Implementation</h2>
-              <p>- Description: Software program that serves as an Assembler, translating assembly language instructions into binary machine code.</p>
-              <p>- Functionalities: Converts human-readable assembly code into machine language.</p>
-              <p>- Tools: HackSimulator, Java IDE</p>
+              <p><strong>Description:</strong> Software program that serves as an Assembler, translating assembly language instructions into binary machine code.</p>
+              <p><strong>Functionalities:</strong> Converts human-readable assembly code into machine language.</p>
+              <p><strong>Tools:</strong> HackSimulator, Java IDE</p>
               <div class="image-container">
                 <img class="project-image" src="images/Assembler-1024x576.jpg.webp" alt="Assembler Image 1" />
                 <img class="project-image" src="images/vecteezy_computer-software-icons_.jpg" alt="Assembler Image 2" />
@@ -38,9 +51,9 @@
 
             <div class="project" id="project2">
               <h2>Project 2: Weather Station with Real-time Clock</h2>
-              <p>- Description: Arduino device to collect local weather data (temperature and humidity).</p>
-              <p>- Functionalities: Real-time monitoring with clock integration for timestamped data.</p>
-              <p>- Tools: Arduino IDE, Arduino Kit, C/C++</p>
+              <p><strong>Description:</strong> Arduino device to collect local weather data (temperature and humidity).</p>
+              <p><strong>Functionalities:</strong> Real-time monitoring with clock integration for timestamped data.</p>
+              <p><strong>Tools:</strong> Arduino IDE, Arduino Kit, C/C++</p>
               <div class="image-container">
                 <img class="project-image" src="images/image.png" alt="Weather Station Image" />
               </div>
@@ -48,21 +61,16 @@
 
             <div class="project" id="project3">
               <h2>Project 3: Task Management Tool</h2>
-              <p>- Description: Tool for students to organize and prioritize tasks.</p>
-              <p>- Functionalities: Sorts tasks by due date and highlights importance.</p>
-              <p>- Tools: GUI Java FX/Swing, Java IDE</p>
+              <p><strong>Description:</strong> Tool for students to organize and prioritize tasks.</p>
+              <p><strong>Functionalities:</strong> Sorts tasks by due date and highlights importance.</p>
+              <p><strong>Tools:</strong> GUI Java FX/Swing, Java IDE</p>
               <div class="image-container">
                 <img class="project-image" src="images/task-management-abstract-concept-illustration_335657-2127.jpg" alt="Task Management Image" />
               </div>
             </div>
           </div>
 
-          <div class="project-nav left">
-            <button id="prevBtn" class="nav-btn"><i class="fa fa-chevron-left"></i></button>
-          </div>
-          <div class="project-nav right">
-            <button id="nextBtn" class="nav-btn"><i class="fa fa-chevron-right"></i></button>
-          </div>
+          <!-- Indicator dots will be inserted here by JavaScript -->
         </div>
       </section>
     </div>

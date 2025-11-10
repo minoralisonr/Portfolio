@@ -1,44 +1,46 @@
 #header {
   position: relative;
+  padding: 20px;
 }
 
 #header h1 {
   font-family: 'Inconsolata', monospace;
   font-size: 2.5em;
+  margin: 0;
 }
 
 .home-button {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 20px;
+  left: 20px;
   font-size: 30px;
   color: #ffffff;
   text-decoration: none;
   padding: 10px;
+  z-index: 10;
 }
 
 .home-button:hover {
-  color: #ffffff;
+  color: #cccccc;
 }
 
 #projects-container {
   position: relative;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 0 30px;
+  padding: 0 80px;
+  min-height: 500px;
 }
 
 #projects-wrapper {
-  display: flex;
-  overflow: hidden;
   position: relative;
   width: 100%;
 }
 
 .project {
-  flex: 1;
   display: none;
-  transition: opacity 1s ease-in-out;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .project.active {
@@ -46,51 +48,127 @@
   opacity: 1;
 }
 
+.project h2 {
+  font-family: 'Proxima Nova', monospace;
+  font-size: 1.25em;
+  margin-bottom: 20px;
+}
+
+.project p {
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+.image-container {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.project-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 .project-nav {
-  position: fixed;
+  position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 1;
-  font-size: 24px;
-  background: none;
-  border: none;
-  cursor: pointer;
+  z-index: 100;
 }
 
 .project-nav.left {
-  left: 20px;
+  left: 0;
 }
 
 .project-nav.right {
-  right: 20px;
+  right: 0;
 }
 
 .nav-btn {
-  background: none;
+  background: rgba(0, 123, 255, 0.8);
   border: none;
   font-size: 24px;
-  color: #007bff;
+  color: #ffffff;
   cursor: pointer;
-  padding: 0;
-  margin: 0;
-  transition: color 0.3s ease;
+  padding: 15px 20px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
 }
 
 .nav-btn:hover {
-  color: #0056b3;
+  background: rgba(0, 86, 179, 0.9);
+  transform: scale(1.1);
 }
 
 .nav-btn:focus {
-  outline: none;
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
 }
 
-.project img {
-  width: 100%;
+.nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
 }
 
-#project1 h2,
-#project2 h2,
-#project3 h2 {
-  font-family: 'Proxima Nova', monospace;
-  font-size: 1.25em;
+.nav-btn:disabled:hover {
+  transform: none;
+  background: rgba(0, 123, 255, 0.8);
+}
+
+/* Project indicator dots */
+.project-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.indicator-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator-dot.active {
+  background: #007bff;
+  transform: scale(1.2);
+}
+
+.indicator-dot:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  #projects-container {
+    padding: 0 60px;
+  }
+  
+  .nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    padding: 10px 15px;
+  }
+  
+  #header h1 {
+    font-size: 2em;
+  }
+  
+  .home-button {
+    font-size: 24px;
+  }
 }
