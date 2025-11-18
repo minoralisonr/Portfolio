@@ -82,11 +82,11 @@
 }
 
 .project-nav.left {
-  left: 0;
+  left: 20px;
 }
 
 .project-nav.right {
-  right: 0;
+  right: 20px;
 }
 
 .nav-btn {
