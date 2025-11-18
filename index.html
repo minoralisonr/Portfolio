@@ -71,108 +71,7 @@
         </header>
         
         <div id="projects-container">
-          <!-- Projects Wrapper -->
-          <div id="projects-wrapper">
-            <!-- Project 1 -->
-            <div class="project active" id="project1" data-project="1">
-              <div class="project-header">
-                <span class="icon solid major style1 fa-laptop-code"></span>
-                <span class="project-badge">System Design</span>
-              </div>
-              <h3>Assembler Implementation</h3>
-              <div class="project-details">
-                <div class="detail-item detail-text">
-                  <strong>Description:</strong> 
-                  <p>Software program that serves as an Assembler, translating assembly language instructions into binary machine code.</p>
-                </div>
-                <div class="detail-item detail-text">
-                  <strong>Functionalities:</strong> 
-                  <p>Converts human-readable assembly code into machine language with optimized parsing algorithms.</p>
-                </div>
-                <div class="detail-item detail-tools">
-                  <strong>Tools:</strong> 
-                  <div class="tech-stack">
-                    <span class="tech-tag">HackSimulator</span>
-                    <span class="tech-tag">Java IDE</span>
-                  </div>
-                </div>
-              </div>
-              <div class="image-container">
-                <div class="image-wrapper">
-                  <img class="project-image" src="images/Assembler-1024x576.jpg.webp" alt="Assembler Implementation" />
-                </div>
-                <div class="image-wrapper">
-                  <img class="project-image" src="images/vecteezy_computer-software-icons_.jpg" alt="Software Icons" />
-                </div>
-              </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="project" id="project2" data-project="2">
-              <div class="project-header">
-                <span class="icon solid major style3 fa-microchip"></span>
-                <span class="project-badge">IoT</span>
-              </div>
-              <h3>Weather Station with Real-time Clock</h3>
-              <div class="project-details">
-                <div class="detail-item detail-text">
-                  <strong>Description:</strong> 
-                  <p>Arduino-based device to collect local weather data including temperature and humidity measurements.</p>
-                </div>
-                <div class="detail-item detail-text">
-                  <strong>Functionalities:</strong> 
-                  <p>Real-time monitoring with clock integration for timestamped data collection and analysis.</p>
-                </div>
-                <div class="detail-item detail-tools">
-                  <strong>Tools:</strong> 
-                  <div class="tech-stack">
-                    <span class="tech-tag">Arduino IDE</span>
-                    <span class="tech-tag">Arduino Kit</span>
-                    <span class="tech-tag">C/C++</span>
-                  </div>
-                </div>
-              </div>
-              <div class="image-container">
-                <div class="image-wrapper">
-                  <img class="project-image" src="images/image.png" alt="Weather Station Arduino Project" />
-                </div>
-              </div>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="project" id="project3" data-project="3">
-              <div class="project-header">
-                <span class="icon solid major style5 fa-tasks"></span>
-                <span class="project-badge">Productivity</span>
-              </div>
-              <h3>Task Management Tool</h3>
-              <div class="project-details">
-                <div class="detail-item detail-text">
-                  <strong>Description:</strong> 
-                  <p>Comprehensive tool for students to organize and prioritize tasks with an intuitive interface.</p>
-                </div>
-                <div class="detail-item detail-text">
-                  <strong>Functionalities:</strong> 
-                  <p>Sorts tasks by due date, highlights importance levels, and provides visual progress tracking.</p>
-                </div>
-                <div class="detail-item detail-tools">
-                  <strong>Tools:</strong> 
-                  <div class="tech-stack">
-                    <span class="tech-tag">Java FX</span>
-                    <span class="tech-tag">Swing</span>
-                    <span class="tech-tag">Java IDE</span>
-                  </div>
-                </div>
-              </div>
-              <div class="image-container">
-                <div class="image-wrapper">
-                  <img class="project-image" src="images/task-management-abstract-concept-illustration_335657-2127.jpg" alt="Task Management Tool Interface" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Navigation Controls -->
+          <!-- Navigation Controls (Moved to Top) -->
           <div class="project-controls">
             <button id="prevBtn" class="nav-btn" aria-label="Previous project">
               <i class="fas fa-chevron-left"></i>
@@ -181,6 +80,179 @@
             <button id="nextBtn" class="nav-btn" aria-label="Next project">
               <i class="fas fa-chevron-right"></i>
             </button>
+          </div>
+
+          <!-- Projects Wrapper -->
+          <div id="projects-wrapper">
+            <!-- Project 1: AiQuickDoc -->
+            <div class="project active" id="project1" data-project="1">
+              <div class="project-content-wrapper">
+                <div class="project-info">
+                  <div class="project-header">
+                    <span class="icon solid major style1 fa-file-pdf"></span>
+                    <span class="project-badge">AI-Powered</span>
+                  </div>
+                  <h3>AiQuickDoc</h3>
+                  
+                  <div class="project-details">
+                    <div class="detail-item detail-text">
+                      <strong>Description:</strong> 
+                      <p>A web application developed within a team that summarizes PDFs and documents with AI-powered voice reader feature and flashcards to enhance study efficiency.</p>
+                    </div>
+                    <div class="detail-item detail-text">
+                      <strong>Functionalities:</strong> 
+                      <p>Intelligent document summarization, text-to-speech voice reader, interactive flashcard generation for improved learning and retention.</p>
+                    </div>
+                    <div class="detail-item detail-tools">
+                      <strong>Tools:</strong> 
+                      <div class="tech-stack">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">AI/ML</span>
+                        <span class="tech-tag">Render</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <a href="https://aiquickdoc-app.onrender.com/" target="_blank" rel="noopener" class="button primary small icon solid fa-external-link-alt">
+                    Visit Site
+                  </a>
+                </div>
+                
+                <div class="project-images">
+                  <div class="image-container">
+                    <div class="image-wrapper">
+                      <img class="project-image" src="images/Assembler-1024x576.jpg.webp" alt="AiQuickDoc Interface" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 2: PantryPath -->
+            <div class="project" id="project2" data-project="2">
+              <div class="project-content-wrapper">
+                <div class="project-info">
+                  <div class="project-header">
+                    <span class="icon solid major style3 fa-shopping-basket"></span>
+                    <span class="project-badge">Full-Stack</span>
+                  </div>
+                  <h3>PantryPath App</h3>
+                  
+                  <div class="project-details">
+                    <div class="detail-item detail-text">
+                      <strong>Description:</strong> 
+                      <p>A grocery inventory management application that helps users track their pantry items and reduce food waste through efficient organization.</p>
+                    </div>
+                    <div class="detail-item detail-text">
+                      <strong>Functionalities:</strong> 
+                      <p>Real-time inventory tracking, user-friendly interface for adding and managing items, cloud-based storage for seamless access across devices.</p>
+                    </div>
+                    <div class="detail-item detail-tools">
+                      <strong>Tools:</strong> 
+                      <div class="tech-stack">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Firebase</span>
+                        <span class="tech-tag">Vercel</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <a href="https://pantry-path.vercel.app" target="_blank" rel="noopener" class="button primary small icon solid fa-external-link-alt">
+                    Visit Site
+                  </a>
+                </div>
+                
+                <div class="project-images">
+                  <div class="image-container">
+                    <div class="image-wrapper">
+                      <img class="project-image" src="images/task-management-abstract-concept-illustration_335657-2127.jpg" alt="PantryPath Interface" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 3: Weather Station -->
+            <div class="project" id="project3" data-project="3">
+              <div class="project-content-wrapper">
+                <div class="project-info">
+                  <div class="project-header">
+                    <span class="icon solid major style5 fa-cloud-sun"></span>
+                    <span class="project-badge">IoT</span>
+                  </div>
+                  <h3>Weather Station with Real-time Clock</h3>
+                  
+                  <div class="project-details">
+                    <div class="detail-item detail-text">
+                      <strong>Description:</strong> 
+                      <p>Arduino-based device programmed to capture and display real-time temperature and humidity using DHT sensors for local weather monitoring.</p>
+                    </div>
+                    <div class="detail-item detail-text">
+                      <strong>Functionalities:</strong> 
+                      <p>Real-time monitoring with clock integration for timestamped data collection, hardware-software integration for data visualization and analysis.</p>
+                    </div>
+                    <div class="detail-item detail-tools">
+                      <strong>Tools:</strong> 
+                      <div class="tech-stack">
+                        <span class="tech-tag">Arduino IDE</span>
+                        <span class="tech-tag">DHT Sensors</span>
+                        <span class="tech-tag">C/C++</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="project-images">
+                  <div class="image-container">
+                    <div class="image-wrapper">
+                      <img class="project-image" src="images/image.png" alt="Weather Station Arduino Project" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 4: Assembler -->
+            <div class="project" id="project4" data-project="4">
+              <div class="project-content-wrapper">
+                <div class="project-info">
+                  <div class="project-header">
+                    <span class="icon solid major style2 fa-laptop-code"></span>
+                    <span class="project-badge">System Design</span>
+                  </div>
+                  <h3>Assembler Implementation</h3>
+                  
+                  <div class="project-details">
+                    <div class="detail-item detail-text">
+                      <strong>Description:</strong> 
+                      <p>A compiler that translates high-level assembly code into binary machine code, demonstrating low-level programming concepts and compilation processes.</p>
+                    </div>
+                    <div class="detail-item detail-text">
+                      <strong>Functionalities:</strong> 
+                      <p>Converts human-readable assembly language into binary, simulates task execution using Hack Simulator for testing and verification.</p>
+                    </div>
+                    <div class="detail-item detail-tools">
+                      <strong>Tools:</strong> 
+                      <div class="tech-stack">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Assembly</span>
+                        <span class="tech-tag">Hack Simulator</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="project-images">
+                  <div class="image-container">
+                    <div class="image-wrapper">
+                      <img class="project-image" src="images/vecteezy_computer-software-icons_.jpg" alt="Assembler Implementation" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           
           <div class="keyboard-hint">
@@ -203,22 +275,22 @@
           </li>
           <li class="style2">
             <span class="icon solid fa-microchip"></span>
-            <strong>Python</strong>
+            <strong>C/C++</strong>
             <span class="skill-level">Intermediate</span>
           </li>
           <li class="style3">
             <span class="icon solid fa-code"></span>
-            <strong>React</strong>
+            <strong>Python</strong>
             <span class="skill-level">Advanced</span>
           </li>
           <li class="style4">
             <span class="icon solid fa-database"></span>
-            <strong>C/C++</strong>
-            <span class="skill-level">Intermediate</span>
+            <strong>SAP S/4HANA</strong>
+            <span class="skill-level">Beginner</span>
           </li>
           <li class="style5">
             <span class="icon solid fa-laptop-code"></span>
-            <strong>JS, CSS/HTML</strong>
+            <strong>HTML/CSS</strong>
             <span class="skill-level">Advanced</span>
           </li>
         </ul>

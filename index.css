@@ -164,10 +164,10 @@
 
 #projects-container {
   position: relative;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 40px 20px;
-  min-height: 600px;
+  padding: 20px;
+  min-height: 650px;
   background: var(--glass-bg);
   border-radius: 24px;
   backdrop-filter: blur(10px);
@@ -179,6 +179,7 @@
   position: relative;
   width: 100%;
   perspective: 1000px;
+  margin-top: 2em;
 }
 
 /* ==================== PROJECT CARDS ==================== */
@@ -188,13 +189,11 @@
   opacity: 0;
   transform: scale(0.95) translateY(20px);
   transition: all 0.6s var(--transition-smooth);
-  padding: 40px;
+  padding: 0;
   text-align: left;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  background: transparent;
   border-radius: 20px;
-  border: 1px solid var(--glass-border);
   position: relative;
-  overflow: hidden;
 }
 
 .project.active {
@@ -215,13 +214,33 @@
   }
 }
 
+/* ==================== PROJECT LAYOUT (LEFT-RIGHT) ==================== */
+
+.project-content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3em;
+  align-items: start;
+}
+
+.project-info {
+  padding-right: 2em;
+}
+
+.project-images {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
 /* ==================== PROJECT HEADER ==================== */
 
 .project-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1.5em;
+  gap: 1em;
+  margin-bottom: 1em;
 }
 
 .project-badge {
@@ -241,7 +260,7 @@
 
 .project .icon {
   margin: 0;
-  padding: 20px;
+  padding: 15px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -250,9 +269,10 @@
   backdrop-filter: blur(10px);
   border: 2px solid rgba(100, 181, 246, 0.3);
   transition: all 0.4s var(--transition-smooth);
-  width: 80px;
-  height: 80px;
-  font-size: 2em;
+  width: 60px;
+  height: 60px;
+  font-size: 1.5em;
+  flex-shrink: 0;
 }
 
 .project .icon::after {
@@ -280,25 +300,35 @@
   height: 150%;
 }
 
-/* ==================== PROJECT CONTENT ==================== */
+/* ==================== PROJECT TITLE (BLUE TO BLACK GRADIENT) ==================== */
 
 .project h3 {
   font-family: 'Inter', 'Proxima Nova', monospace;
   font-size: 1.8em;
   font-weight: 700;
-  margin: 1em 0 1.5em;
-  color: #ffffff;
-  background: linear-gradient(135deg, #ffffff, #64b5f6);
+  margin: 0.5em 0 1em;
+  color: #64b5f6;
+  background: linear-gradient(135deg, #64b5f6 0%, #1a1a1a 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* ==================== PROJECT DETAILS (SCROLL REVEAL) ==================== */
 
 .project-details {
   display: flex;
   flex-direction: column;
   gap: 1.5em;
   margin-bottom: 2em;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease 0.3s, transform 0.6s ease 0.3s;
+}
+
+.project.active .project-details {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ==================== TEXT DETAIL ITEMS (Description & Functionalities) ==================== */
@@ -309,12 +339,27 @@
   border-radius: 0;
   border-left: none;
   transition: none;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.project.active .detail-item.detail-text:nth-child(1) {
+  transition-delay: 0.4s;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.project.active .detail-item.detail-text:nth-child(2) {
+  transition-delay: 0.5s;
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .detail-item.detail-text:hover {
   background: transparent;
   border-left-color: transparent;
-  transform: none;
+  transform: translateX(0);
 }
 
 .detail-item.detail-text strong {
@@ -340,7 +385,7 @@
   font-weight: 300;
 }
 
-/* ==================== TOOLS DETAIL ITEM (Keep original style) ==================== */
+/* ==================== TOOLS DETAIL ITEM (Scroll Reveal + Keep original style) ==================== */
 
 .detail-item.detail-tools {
   background: rgba(255, 255, 255, 0.03);
@@ -349,6 +394,14 @@
   border-left: 3px solid rgba(100, 181, 246, 0.5);
   transition: all 0.3s var(--transition-smooth);
   margin-bottom: 0;
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.project.active .detail-item.detail-tools {
+  transition-delay: 0.6s;
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .detail-item.detail-tools:hover {
@@ -382,6 +435,21 @@
   background: none !important;
 }
 
+/* ==================== PROJECT BUTTONS ==================== */
+
+.project-info .button {
+  margin-top: 1em;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.project.active .project-info .button {
+  transition-delay: 0.7s;
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* ==================== TECH STACK ==================== */
 
 .tech-stack {
@@ -410,14 +478,21 @@
   box-shadow: 0 4px 12px rgba(100, 181, 246, 0.3);
 }
 
-/* ==================== PROJECT IMAGES ==================== */
+/* ==================== PROJECT IMAGES (RIGHT SIDE) ==================== */
 
 .image-container {
-  margin-top: 2em;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5em;
-  justify-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.project.active .image-container {
+  transition-delay: 0.4s;
+  opacity: 1;
+  transform: scale(1);
 }
 
 .image-wrapper {
@@ -429,7 +504,7 @@
   border: 2px solid rgba(100, 181, 246, 0.2);
   transition: all 0.4s var(--transition-smooth);
   width: 100%;
-  max-width: 250px;
+  max-width: 350px;
 }
 
 .image-wrapper::before {
@@ -457,7 +532,7 @@
 
 .project-image {
   max-width: 100% !important;
-  max-height: 140px !important;
+  max-height: 200px !important;
   width: auto !important;
   height: auto !important;
   object-fit: contain !important;
@@ -471,14 +546,14 @@
   transform: scale(1.05);
 }
 
-/* ==================== PROJECT CONTROLS ==================== */
+/* ==================== PROJECT CONTROLS (MOVED TO TOP) ==================== */
 
 .project-controls {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 2em;
-  margin-top: 3em;
+  margin-bottom: 2em;
   position: relative;
   z-index: 10;
 }
@@ -702,6 +777,12 @@
   min-width: 12em;
 }
 
+.button.small {
+  font-size: 0.9em;
+  padding: 0 1.5em;
+  min-width: 8em;
+}
+
 /* ==================== FOOTER ICONS ==================== */
 
 .icons {
@@ -733,6 +814,21 @@
 
 /* ==================== RESPONSIVE DESIGN ==================== */
 
+@media screen and (max-width: 980px) {
+  .project-content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 2em;
+  }
+  
+  .project-info {
+    padding-right: 0;
+  }
+  
+  .project-images {
+    min-height: auto;
+  }
+}
+
 @media screen and (max-width: 768px) {
   #header h1 {
     font-size: 2.5em;
@@ -756,11 +852,8 @@
   }
 
   #projects-container {
-    padding: 30px 15px;
-  }
-
-  .project {
-    padding: 30px 20px;
+    padding: 20px 15px;
+    min-height: 550px;
   }
 
   .project h3 {
@@ -768,17 +861,17 @@
   }
 
   .project .icon {
-    width: 60px;
-    height: 60px;
-    font-size: 1.5em;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2em;
   }
 
   .image-wrapper {
-    max-width: 200px;
+    max-width: 250px;
   }
 
   .project-image {
-    max-height: 120px !important;
+    max-height: 150px !important;
   }
 
   .nav-btn {
@@ -789,7 +882,7 @@
 
   .project-controls {
     gap: 1.5em;
-    margin-top: 2em;
+    margin-bottom: 1.5em;
   }
 
   .statistics li {
@@ -832,16 +925,12 @@
     padding: 1.2em;
   }
 
-  .image-container {
-    grid-template-columns: 1fr;
-  }
-
   .image-wrapper {
-    max-width: 180px;
+    max-width: 200px;
   }
 
   .project-image {
-    max-height: 100px !important;
+    max-height: 120px !important;
   }
 
   .nav-btn {
@@ -852,6 +941,7 @@
 
   .project-controls {
     gap: 1em;
+    margin-bottom: 1em;
   }
 
   .indicator-dot {

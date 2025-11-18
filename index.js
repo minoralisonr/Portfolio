@@ -203,23 +203,13 @@ document.addEventListener("DOMContentLoaded", function () {
       if (e.key === 'ArrowRight') {
         e.preventDefault();
         nextProject();
-        resetAutoRotate();
       } else if (e.key === 'ArrowLeft') {
         e.preventDefault();
         prevProject();
-        resetAutoRotate();
       }
     });
 
-    // Pause auto-rotate on hover
-    projectsContainer.addEventListener('mouseenter', () => {
-      clearInterval(autoRotateInterval);
-    });
-
-    projectsContainer.addEventListener('mouseleave', () => {
-      resetAutoRotate();
-    });
-
+    // Hover interactions removed - no auto-rotate
     // Touch swipe support
     let touchStartX = 0;
     let touchEndX = 0;
@@ -245,23 +235,13 @@ document.addEventListener("DOMContentLoaded", function () {
           // Swipe right - previous project
           prevProject();
         }
-        resetAutoRotate();
       }
     }
 
     // ==================== INITIALIZE ====================
     showProject(currentProject);
     updateButtonStates();
-    resetAutoRotate();
-
-    // Pause auto-rotate when page is not visible
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) {
-        clearInterval(autoRotateInterval);
-      } else {
-        resetAutoRotate();
-      }
-    });
+    // Auto-rotate removed - user navigates manually
   }
 
   // ==================== SMOOTH SCROLL FOR ALL LINKS ====================
