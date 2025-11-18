@@ -316,12 +316,29 @@
   margin-bottom: 2em;
 }
 
+/* Ensure paragraphs inside project details are visible */
+.project .project-details p,
+.project .detail-item p,
+#projects-wrapper .project p {
+  margin: 0.5em 0 !important;
+  padding: 0 !important;
+  line-height: 1.8 !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-size: 1em !important;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  text-align: left !important;
+  background: none !important;
+}
+
 .detail-item {
   background: rgba(255, 255, 255, 0.03);
   padding: 1.5em;
   border-radius: 12px;
   border-left: 3px solid rgba(100, 181, 246, 0.5);
   transition: all 0.3s var(--transition-smooth);
+  margin-bottom: 0;
 }
 
 .detail-item:hover {
@@ -334,15 +351,20 @@
   color: #64b5f6;
   font-weight: 600;
   font-size: 1.1em;
-  display: block;
-  margin-bottom: 0.5em;
+  display: inline-block;
+  margin-bottom: 0.8em;
   text-shadow: 0 0 10px rgba(100, 181, 246, 0.3);
 }
 
 .detail-item p {
-  margin: 0;
+  margin: 0 !important;
+  padding: 0 !important;
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-size: 1em;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 /* ==================== TECH STACK ==================== */
@@ -784,7 +806,15 @@
   }
 
   .detail-item {
-    padding: 1em;
+    padding: 1.2em;
+  }
+  
+  .detail-item strong {
+    font-size: 1em;
+  }
+  
+  .detail-item p {
+    font-size: 0.95em;
   }
 
   .image-container {
