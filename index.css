@@ -197,6 +197,21 @@
   overflow: hidden;
 }
 
+.project::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.project:hover::before {
+  left: 100%;
+}
+
 .project.active {
   display: block;
   opacity: 1;
@@ -301,48 +316,23 @@
   margin-bottom: 2em;
 }
 
-/* ==================== TEXT DETAIL ITEMS (Description & Functionalities) ==================== */
-
-.detail-item.detail-text {
-  background: transparent;
-  padding: 0;
-  border-radius: 0;
-  border-left: none;
-  transition: none;
-}
-
-.detail-item.detail-text:hover {
-  background: transparent;
-  border-left-color: transparent;
-  transform: none;
-}
-
-.detail-item.detail-text strong {
-  color: #64b5f6;
-  font-weight: 600;
-  font-size: 1.1em;
-  display: block;
-  margin-bottom: 0.5em;
-  text-shadow: 0 0 10px rgba(100, 181, 246, 0.3);
-}
-
-.detail-item.detail-text p {
-  margin: 0 !important;
+/* Ensure paragraphs inside project details are visible */
+.project .project-details p,
+.project .detail-item p,
+#projects-wrapper .project p {
+  margin: 0.5em 0 !important;
   padding: 0 !important;
   line-height: 1.8 !important;
-  color: rgba(255, 255, 255, 0.85) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
   font-size: 1em !important;
   display: block !important;
   opacity: 1 !important;
   visibility: visible !important;
   text-align: left !important;
   background: none !important;
-  font-weight: 300;
 }
 
-/* ==================== TOOLS DETAIL ITEM (Keep original style) ==================== */
-
-.detail-item.detail-tools {
+.detail-item {
   background: rgba(255, 255, 255, 0.03);
   padding: 1.5em;
   border-radius: 12px;
@@ -351,35 +341,30 @@
   margin-bottom: 0;
 }
 
-.detail-item.detail-tools:hover {
+.detail-item:hover {
   background: rgba(255, 255, 255, 0.05);
   border-left-color: rgba(100, 181, 246, 0.8);
   transform: translateX(5px);
 }
 
-.detail-item.detail-tools strong {
+.detail-item strong {
   color: #64b5f6;
   font-weight: 600;
   font-size: 1.1em;
-  display: block;
+  display: inline-block;
   margin-bottom: 0.8em;
   text-shadow: 0 0 10px rgba(100, 181, 246, 0.3);
 }
 
-/* Ensure all paragraphs in project details are visible */
-.project .project-details p,
-.project .detail-item p,
-#projects-wrapper .project p {
-  margin: 0.5em 0 !important;
+.detail-item p {
+  margin: 0 !important;
   padding: 0 !important;
-  line-height: 1.8 !important;
-  color: rgba(255, 255, 255, 0.85) !important;
-  font-size: 1em !important;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-size: 1em;
   display: block !important;
   opacity: 1 !important;
   visibility: visible !important;
-  text-align: left !important;
-  background: none !important;
 }
 
 /* ==================== TECH STACK ==================== */
@@ -820,16 +805,16 @@
     font-size: 1.3em;
   }
 
-  .detail-item.detail-text strong {
+  .detail-item {
+    padding: 1.2em;
+  }
+  
+  .detail-item strong {
     font-size: 1em;
   }
   
-  .detail-item.detail-text p {
-    font-size: 0.95em !important;
-  }
-  
-  .detail-item.detail-tools {
-    padding: 1.2em;
+  .detail-item p {
+    font-size: 0.95em;
   }
 
   .image-container {
