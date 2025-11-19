@@ -336,15 +336,11 @@
 /* ==================== PROJECT TITLE ==================== */
 
 .project h3 {
-  font-family: 'Inter', 'Proxima Nova', monospace;
-  font-size: 1.8em;
-  font-weight: 700;
-  margin: 0 0 0.5em 0;
-  color: hsl(185, 100%, 69%);
-  background: linear-gradient(135deg, #3decff, #64b5f6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+    font-family: 'Inter', 'Proxima Nova', monospace;
+    font-size: 1.8em;
+    font-weight: 700;
+    margin: 1em 0 1.5em;
+    color: #e0e0e0;
 }
 
 /* ==================== ENHANCED PROJECT DETAILS ==================== */
