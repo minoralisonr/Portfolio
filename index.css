@@ -340,8 +340,8 @@
   font-size: 1.8em;
   font-weight: 700;
   margin: 0 0 0.5em 0;
-  color: #ffffff;
-  background: linear-gradient(135deg, #ffffff, #64b5f6);
+  color: hsl(185, 100%, 69%);
+  background: linear-gradient(135deg, #3decff, #64b5f6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
