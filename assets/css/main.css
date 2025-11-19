@@ -2865,114 +2865,191 @@ input, select, textarea {
 
 		}
 
-/* Statistics */
+/* ==================== SMALLER SKILLS SQUARES ==================== */
 
-	.statistics {
-		display: -moz-flex;
-		display: -webkit-flex;
-		display: -ms-flex;
-		display: flex;
-		width: 100%;
-		margin: 0 0 3em 0;
-		padding: 0;
-		list-style: none;
-		cursor: default;
-	}
+/* Make statistics cubes smaller and more compact */
+.statistics {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 1em !important;
+    justify-content: center !important;
+    margin: 2em 0 3em 0 !important;
+}
 
-		.statistics li {
-			-moz-flex: 1;
-			-webkit-flex: 1;
-			-ms-flex: 1;
-			flex: 1;
-			padding: 1.5em;
-			color: #ffffff;
-			text-align: center;
-		}
+.statistics li {
+    flex: 1 !important;
+    min-width: 140px !important; /* Smaller minimum width */
+    max-width: 160px !important; /* Limit maximum width */
+    padding: 1.2em 0.8em !important; /* Reduced padding */
+    border-radius: 12px !important; /* Slightly smaller radius */
+    min-height: 120px !important; /* Reduced height */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
 
-			.statistics li.style1 {
-				background-color: #efa8b0;
-			}
+/* Keep the original background colors but make them more subtle */
+.statistics li.style1 {
+    background-color: rgba(239, 168, 176, 0.15) !important; /* Lighter opacity */
+}
+.statistics li.style2 {
+    background-color: rgba(199, 156, 200, 0.15) !important;
+}
+.statistics li.style3 {
+    background-color: rgba(168, 156, 200, 0.15) !important;
+}
+.statistics li.style4 {
+    background-color: rgba(155, 178, 225, 0.15) !important;
+}
+.statistics li.style5 {
+    background-color: rgba(140, 201, 240, 0.15) !important;
+}
 
-			.statistics li.style2 {
-				background-color: #c79cc8;
-			}
+/* Smaller icons */
+.statistics li .icon:before {
+    font-size: 2rem !important; /* Smaller icons */
+    margin-bottom: 0.5em !important;
+}
 
-			.statistics li.style3 {
-				background-color: #a89cc8;
-			}
+/* Smaller text */
+.statistics li strong, .statistics li b {
+    font-size: 1.3em !important; /* Smaller main text */
+    line-height: 1.2 !important;
+    margin-bottom: 0.3em !important;
+    font-weight: 400 !important;
+}
 
-			.statistics li.style4 {
-				background-color: #9bb2e1;
-			}
+.skill-level {
+    font-size: 0.75em !important; /* Smaller skill level text */
+    margin-top: 0.5em !important;
+    opacity: 0.9 !important;
+}
 
-			.statistics li.style5 {
-				background-color: #8cc9f0;
-			}
+/* Subtle hover effects */
+.statistics li:hover {
+    transform: translateY(-3px) scale(1.05) !important; /* Smaller hover lift */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
+}
 
-			.statistics li strong, .statistics li b {
-				display: block;
-				font-size: 2em;
-				line-height: 1.1;
-				color: inherit !important;
-				font-weight: 300;
-				letter-spacing: -0.025em;
-			}
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 980px) {
+    .statistics li {
+        min-width: 130px !important;
+        max-width: 150px !important;
+        padding: 1em 0.6em !important;
+        min-height: 110px !important;
+    }
+    
+    .statistics li .icon:before {
+        font-size: 1.8rem !important;
+    }
+    
+    .statistics li strong, .statistics li b {
+        font-size: 1.2em !important;
+    }
+}
 
-			.statistics li:first-child {
-				border-top-left-radius: 8px;
-				border-bottom-left-radius: 8px;
-			}
+@media screen and (max-width: 736px) {
+    .statistics {
+        gap: 0.8em !important;
+        margin: 1.5em 0 2em 0 !important;
+    }
+    
+    .statistics li {
+        min-width: 120px !important;
+        max-width: 140px !important;
+        padding: 0.8em 0.5em !important;
+        min-height: 100px !important;
+    }
+    
+    .statistics li .icon:before {
+        font-size: 1.6rem !important;
+    }
+    
+    .statistics li strong, .statistics li b {
+        font-size: 1.1em !important;
+    }
+    
+    .skill-level {
+        font-size: 0.7em !important;
+    }
+}
 
-			.statistics li:last-child {
-				border-top-right-radius: 8px;
-				border-bottom-right-radius: 8px;
-			}
+@media screen and (max-width: 480px) {
+    .statistics {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.8em !important;
+    }
+    
+    .statistics li {
+        min-width: auto !important;
+        max-width: none !important;
+        width: 100% !important;
+        padding: 1em 0.5em !important;
+        min-height: 95px !important;
+    }
+    
+    .statistics li .icon:before {
+        font-size: 1.5rem !important;
+    }
+    
+    .statistics li strong, .statistics li b {
+        font-size: 1em !important;
+    }
+}
 
-			.statistics li .icon {
-				display: inline-block;
-			}
+/* Even smaller option for very compact layout */
+@media screen and (max-width: 360px) {
+    .statistics {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.6em !important;
+    }
+    
+    .statistics li {
+        padding: 0.8em 0.4em !important;
+        min-height: 85px !important;
+    }
+    
+    .statistics li .icon:before {
+        font-size: 1.3rem !important;
+    }
+    
+    .statistics li strong, .statistics li b {
+        font-size: 0.9em !important;
+    }
+    
+    .skill-level {
+        font-size: 0.65em !important;
+    }
+}
 
-				.statistics li .icon:before {
-					font-size: 2.75rem;
-					line-height: 1.3;
-				}
+/* Animation for skills appearing */
+@keyframes skillCubeAppear {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) rotate(-5deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
 
-		@media screen and (max-width: 980px) {
+/* Apply animation with stagger */
+.statistics li {
+    animation: skillCubeAppear 0.5s ease-out forwards;
+    opacity: 0;
+}
 
-			.statistics li strong, .statistics li b {
-				font-size: 1.5em;
-			}
-
-		}
-
-		@media screen and (max-width: 736px) {
-
-			.statistics {
-				display: block;
-				width: 20em;
-				max-width: 100%;
-				margin: 0 auto 2em auto;
-			}
-
-				.statistics li:first-child {
-					border-bottom-left-radius: 0;
-					border-top-right-radius: 8px;
-				}
-
-				.statistics li:last-child {
-					border-top-right-radius: 0;
-					border-bottom-left-radius: 8px;
-				}
-
-				.statistics li .icon:before {
-					font-size: 3.75rem;
-				}
-
-				.statistics li strong, .statistics li b {
-					font-size: 2.5em;
-				}
-
-		}
+.statistics li:nth-child(1) { animation-delay: 0.1s; }
+.statistics li:nth-child(2) { animation-delay: 0.2s; }
+.statistics li:nth-child(3) { animation-delay: 0.3s; }
+.statistics li:nth-child(4) { animation-delay: 0.4s; }
+.statistics li:nth-child(5) { animation-delay: 0.5s; }
 
 /* Spotlight */
 

@@ -244,6 +244,74 @@ document.addEventListener("DOMContentLoaded", function () {
     // Auto-rotate removed - user navigates manually
   }
 
+  // ==================== ENHANCED SKILLS ANIMATIONS ====================
+  function initializeSkillsAnimations() {
+    const skillItems = document.querySelectorAll('.skill-item');
+    
+    // Create intersection observer for skill animations
+    const skillsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const skillLevel = entry.target.querySelector('.skill-level');
+          const width = skillLevel.style.width;
+          
+          // Reset width to 0 for animation
+          skillLevel.style.width = '0%';
+          
+          // Animate to the actual width
+          setTimeout(() => {
+            skillLevel.style.transition = 'width 1s ease-in-out';
+            skillLevel.style.width = width;
+          }, 100);
+          
+          skillsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    
+    // Observe each skill item
+    skillItems.forEach(item => {
+      skillsObserver.observe(item);
+      
+      // Add hover effects
+      item.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateX(5px)';
+        this.style.transition = 'transform 0.2s ease';
+      });
+      
+      item.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateX(0)';
+      });
+    });
+  }
+
+  // ==================== ACHIEVEMENTS SECTION ANIMATIONS ====================
+  function initializeAchievementsAnimations() {
+    const achievementCards = document.querySelectorAll('.achievement-card');
+    
+    const achievementsObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          // Staggered animation
+          setTimeout(() => {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0) scale(1)';
+          }, index * 150);
+          
+          achievementsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    // Set initial state and observe
+    achievementCards.forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px) scale(0.9)';
+      card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      achievementsObserver.observe(card);
+    });
+  }
+
   // ==================== SMOOTH SCROLL FOR ALL LINKS ====================
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -287,18 +355,6 @@ document.addEventListener("DOMContentLoaded", function () {
     section.style.transform = 'translateY(30px)';
     section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(section);
-  });
-
-  // ==================== SKILLS HOVER EFFECTS ====================
-  const skillItems = document.querySelectorAll('.statistics li');
-  skillItems.forEach(item => {
-    item.addEventListener('mouseenter', function() {
-      this.style.transform = 'translateY(-8px) scale(1.02)';
-    });
-
-    item.addEventListener('mouseleave', function() {
-      this.style.transform = 'translateY(0) scale(1)';
-    });
   });
 
   // ==================== BUTTON RIPPLE EFFECT ====================
@@ -417,6 +473,13 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll('img[data-src]').forEach(img => {
     imageObserver.observe(img);
   });
+
+  // ==================== INITIALIZE NEW SECTIONS ====================
+  // Initialize skills animations
+  initializeSkillsAnimations();
+  
+  // Initialize achievements animations
+  initializeAchievementsAnimations();
 
   // ==================== CONSOLE MESSAGE ====================
   console.log(
